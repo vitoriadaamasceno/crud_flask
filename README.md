@@ -1,1 +1,1 @@
-# jogoteca_alura_flask
+# jogoteca_flask_crud
