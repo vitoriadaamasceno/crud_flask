@@ -1,0 +1,25 @@
+{% extends "template.html" %} {% block conteudo %}
+<table class="table table-striped table-responsive table-bordered">
+    <thead class="thead-default">
+        <tr>
+            <th>Nome</th>
+            <th>Categoria</th>
+            <th>Console</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for jogo in jogos %}
+        <tr>
+            <td>{{jogo.nome}}</td>
+            <td>{{jogo.categoria}}</td>
+            <td>{{jogo.console}}</td>
+            <td><a href="{{url_for('editar',id=jogo.id)}}">Editar</a> 
+                <a href="{{url_for('deletar',id=jogo.id)}}">Deletar</a>
+            </td>
+            <!--o id no urlfor determina que a edição vai seer personalizada para quele item -->
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
